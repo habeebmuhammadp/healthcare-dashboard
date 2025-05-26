@@ -1,0 +1,391 @@
+.anatomy-section {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    position: relative;
+}
+
+.anatomy-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.human-body {
+    position: relative;
+    width: 200px;
+    height: 400px;
+}
+
+.body-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Connection Lines (Axes) */
+.connection-line {
+    position: absolute;
+    background: #1e40af;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+.connection-line::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #1e40af;
+    border-radius: 50%;
+}
+
+.connection-line::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border: 2px solid #1e40af;
+    border-radius: 50%;
+    background: transparent;
+}
+
+/* Heart Connection */
+.heart-connection {
+    top: 27%;
+    left: 50%;
+    width: 45%;
+    height: 2px;
+}
+
+.heart-connection::before {
+    left: 0;
+    top: -1px;
+}
+
+.heart-connection::after {
+    right: -3px;
+    top: -2px;
+}
+
+/* Brain Connection */
+.brain-connection {
+    top: 5%;
+    right: 1%;
+    width: 50%;
+    height: 2px;
+}
+
+.brain-connection::before {
+    left: 0;
+    top: -1px;
+}
+
+.brain-connection::after {
+    right: -3px;
+    top: -2px;
+}
+
+
+/* Bone Connection */
+.bone-connection {
+    bottom: 32%;
+    left: 5%;
+    width: 35%;
+    height: 2px;
+    transform: rotate(15deg);
+    transform-origin: left center;
+}
+
+.bone-connection::before {
+    right: 0;
+    top: -1px;
+}
+
+.bone-connection::after {
+    left: -3px;
+    top: -2px;
+}
+
+/* Organ Scanning Areas */
+.organ-scan-area {
+    position: absolute;
+    z-index: 1;
+}
+
+.heart-area {
+    top: 21%;
+    left: 44%;
+    width: 40px;
+    height: 40px;
+}
+
+.brain-area {
+    top: 0%;
+    left: 41%;
+    width: 40px;
+    height: 25px;
+}
+
+.bone-area {
+    bottom: 25%;
+    left: 34%;
+    width: 30px;
+    height: 60px;
+}
+
+/* Scan Box Styling */
+.scan-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.scan-corners {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.corner {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #ff0000;
+}
+
+.corner.top-left {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.corner.top-right {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+}
+
+.corner.bottom-left {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+}
+
+.corner.bottom-right {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+/* Scanning Line Animation */
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #00ff00 50%, transparent 100%);
+    animation: scanVertical 2s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+@keyframes scanVertical {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: calc(100% - 2px);
+        opacity: 0;
+    }
+}
+
+/* Corner Pulsing Animation */
+.corner {
+    animation: cornerPulse 3s ease-in-out infinite;
+}
+
+@keyframes cornerPulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+/* Health Indicators */
+.health-indicator {
+    position: absolute;
+    background: #1e40af;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.health-indicator.heart {
+    top: 25%;
+    right: -40%;
+}
+
+.health-indicator.bone {
+    bottom: 30%;
+    left: -40%;
+}
+
+.health-indicator.eye {
+    top: 15%;
+    left: -40%;
+}
+
+.health-indicator.brain {
+    top: 1%;
+    right: -40%;
+}
+
+.health-log-button {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.log-btn {
+    background: #06b6d4;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.log-date {
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .health-indicator {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .health-indicator.heart {
+        right: -20%;
+    }
+
+    .health-indicator.bone {
+        left: -30%;
+    }
+
+    .organ-scan-area {
+        opacity: 0.8;
+    }
+
+    .corner {
+        width: 6px;
+        height: 6px;
+    }
+
+    .connection-line {
+        opacity: 0.4;
+    }
+
+    .heart-connection {
+        width: 35%;
+    }
+
+    .brain-connection {
+        width: 40%;
+    }
+
+    .bone-connection {
+        width: 25%;
+    }
+}
+@media (max-width: 480px) {
+    .human-body {
+        width: 150px;
+        height: 300px;
+    }
+
+    .health-indicator {
+        font-size: 9px;
+        padding: 3px 6px;
+    }
+
+    .health-indicator.heart,
+    .health-indicator.brain {
+        right: -15%;
+    }
+
+    .health-indicator.bone,
+    .health-indicator.eye {
+        left: -15%;
+    }
+
+    .organ-scan-area {
+        transform: scale(0.8);
+    }
+
+    .log-btn {
+        padding: 6px 12px;
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .human-body {
+        width: 250px;
+        height: 500px;
+    }
+
+    .health-indicator {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    .health-indicator.heart,
+    .health-indicator.brain {
+        right: -45%;
+    }
+
+    .health-indicator.bone,
+    .health-indicator.eye {
+        left: -45%;
+    }
+}

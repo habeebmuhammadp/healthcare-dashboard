@@ -1,0 +1,104 @@
+.activity-feed {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.activity-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.activity-subtitle {
+    font-size: 13px;
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.activity-chart {
+    position: relative;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 120px;
+    margin-bottom: 8px;
+    padding: 0 4px;
+    gap: 11px;
+}
+
+.day-group {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    width: calc(100% / 7 - 6px);
+    height: 100%;
+}
+
+.chart-bar {
+    width: 100%;
+    border-radius: 2px;
+    min-height: 4px;
+    transition: opacity 0.2s ease;
+    flex: 1;
+}
+
+.chart-bar:hover {
+    opacity: 0.8;
+}
+
+.chart-bar.cyan {
+    background-color: #22d3ee;
+}
+
+.chart-bar.dark {
+    background-color: #374151;
+}
+
+.chart-labels {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    padding: 0 4px;
+    width: 100%;
+}
+
+.day-label {
+    font-size: 12px;
+    color: #9ca3af;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .chart-container {
+        gap: 4px;
+    }
+
+    .day-group {
+        width: calc(100% / 7 - 4px);
+        gap: 1px;
+    }
+
+    .chart-bar {
+        min-height: 2px;
+    }
+
+    .day-label {
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,133 @@
+.upcoming-schedule {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+.upcoming-schedule h3 {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.schedule-day {
+  margin-bottom: 24px;
+}
+
+.schedule-day:last-child {
+  margin-bottom: 0;
+}
+
+.schedule-day h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.day-appointments {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.simple-appointment-card {
+  background: #e0e7ff;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  min-height: 80px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
+}
+
+.simple-appointment-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.appointment-emoji {
+  font-size: 25px;
+  background: none;
+  padding: 0;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+}
+
+.simple-appointment-card {
+  background: #c4cdeb;
+}
+
+
+.appointment-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.appointment-title {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1e293b;
+  line-height: 1.3;
+}
+
+.appointment-time {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .upcoming-schedule {
+    padding: 20px;
+    border-radius: 16px;
+  }
+  
+  .day-appointments {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .simple-appointment-card {
+    padding: 14px;
+    min-height: 70px;
+  }
+}
+
+/* Custom scrollbar */
+.upcoming-schedule::-webkit-scrollbar {
+  width: 6px;
+}
+
+.upcoming-schedule::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.upcoming-schedule::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.upcoming-schedule::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
